@@ -149,17 +149,9 @@ def main():
             print(flags[0])
             print(str(type(flags[0])))
             for i in range(len(flags)):
-                #print(flags[i])
                 if flags[i][1] >= args.thr:
                     boxes.append(tuple(list(value[1][i]) + [flags[i][1]]))
                     print("IS A FACE: " + str(flags[i]))
-                    c = decimal.Decimal(key)
-                    c = float(round(c,2))
-                    if c > 0.06:
-                        print("KEY: " + str(c))
-                        #cv2.imwrite("posibles2/noFacesIter12_" + str(count) + ".png", value[0][i])
-                #else:
-                    #cv2.imwrite("posibles2/noFacesIter26_" + str(count) + ".png", value[0][i])
                     count = count + 1
     
         sup_boxes = nms(boxes, 0.3)
